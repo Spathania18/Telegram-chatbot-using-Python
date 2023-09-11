@@ -1,3 +1,4 @@
+# Importing Libraries
 from warnings import filters
 import constants as keys
 from telegram.ext import *
@@ -6,6 +7,7 @@ import responses as R
 
 print("Bot started...")
 
+# Defining Various Actions
 def start_command(update, context):
     update.message.reply_text('type something random to get started!')
 
@@ -22,7 +24,7 @@ def handle_command(update, context):
 def error(update, context):
     print(f"update {update} caused error {context.error}")
 
-
+# Writing the main Funtion that will run
 def main():
     updater = Updater(keys.API, use_context = True)
     dp = updater.dispatcher
@@ -36,6 +38,7 @@ def main():
     updater.start_polling()
     updater.idle()
 
+# Calling the Main Funtion
 main()
 
 
